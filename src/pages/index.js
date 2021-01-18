@@ -14,11 +14,12 @@ const headingStyles = {
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
-    this.onPop = this.onPop.bind(this)
+    this.onPop = this.onLogin.bind(this)
   }
 
-  onPop = (e, loginType) => {
-    var url = `http://localhost:9000/.netlify/functions/auth/${loginType}`;
+  onLogin = (e, loginType) => {
+    //var url = `http://localhost:9000/.netlify/functions/auth/${loginType}`;
+    var url = `/.netlify/functions/auth/${loginType}`;
     var win = typeof window !== `undefined` ? window : null;
 
     var n = win.open(url, "_self");
@@ -37,7 +38,7 @@ class IndexPage extends React.Component {
           type="button"
           target="_self"
           rel="noreferrer"
-          onClick={e => this.onPop(e, "facebook")}
+          onClick={e => this.onLogin(e, "facebook")}
         >
           Login with Facebook!
         </button>

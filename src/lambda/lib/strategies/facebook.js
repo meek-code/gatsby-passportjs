@@ -11,7 +11,8 @@ router.use((req, _res, next) => {
         {
           clientID: "225857695679143",
           clientSecret: "78f64690ca3a5dbc3f09db052f800bcf",
-          callbackURL: `http://localhost:9000/.netlify/functions/auth/facebook/callback`
+          //callbackURL: `http://localhost:9000/.netlify/functions/auth/facebook/callback`
+          callbackURL: `/.netlify/functions/auth/facebook/callback`
         },
         async function (_accessToken, _refreshToken, profile, done) {
           console.info("load user profile", profile);
@@ -42,7 +43,8 @@ router.get(
       if (loginErr) {
         throw loginErr
       }
-      return res.redirect("http://localhost:8000/welcome/?name=" + req.user.displayName)
+      //return res.redirect("http://localhost:8000/welcome/?name=" + req.user.displayName)
+      return res.redirect("/welcome/?name=" + req.user.displayName)
     })
   }
 )
