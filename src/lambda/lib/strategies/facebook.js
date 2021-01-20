@@ -9,8 +9,8 @@ router.use((req, _res, next) => {
     passport.use(
       new Strategy(
         {
-          clientID: "225857695679143",
-          clientSecret: "78f64690ca3a5dbc3f09db052f800bcf",
+          clientID: "225857695679143", //TODO: Change to your client ID
+          clientSecret: "78f64690ca3a5dbc3f09db052f800bcf", //TODO: Change to your client Secret
           //callbackURL: `http://localhost:9000/.netlify/functions/auth/facebook/callback`
           callbackURL: `/.netlify/functions/auth/facebook/callback`
         },
